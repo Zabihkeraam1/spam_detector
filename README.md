@@ -155,15 +155,16 @@ Make your system real:
 
 ## 📂 Project Structure
 
+```text
 spam_detector/
-├─ data
-│  ├─ raw
-│  └─ processed
-├─ src
+├─ data/
+│  ├─ raw/         # Raw datasets
+│  └─ processed/   # Cleaned datasets
+├─ src/
 │  ├─ data_cleaning.py
 │  ├─ train_model.py
 │  └─ utils.py
-├─ venv
+├─ venv/
 ├─ .gitignore
 └─ README.md
 
