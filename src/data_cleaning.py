@@ -19,8 +19,19 @@ data = pd.read_csv(
 )
 
 data.columns = ['label', 'message']
+data = data.dropna(subset=['message'])
+data['message'] = data['message'].astype(str)
+data = data[data['message'].str.strip() != ""]
+data = data.dropna(subset=['label'])
 
+# First map
 data['label'] = data['label'].map({'ham': 0, 'spam': 1})
+
+# Then clean any failed mappings
+data = data.dropna(subset=['label'])
+
+# Then convert to int
+data['label'] = data['label'].astype(int)
 
 def preprocess(text):
     text = text.lower()
@@ -31,7 +42,7 @@ def preprocess(text):
     tokens = word_tokenize(text)
     
     tokens = [t for t in tokens if t not in stop_words]
-    
+    tokens = [t for t in tokens if t.isalpha()]
     tokens = [lemmatizer.lemmatize(t) for t in tokens]
     
     return ' '.join(tokens)
