@@ -66,4 +66,6 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-bert_results/
+models/
+*.safetensors
+*.pkl
