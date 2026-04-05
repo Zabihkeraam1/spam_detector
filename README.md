@@ -132,17 +132,6 @@ Create a pipeline:
 4. Predict using trained model  
 5. Output: Spam / Not Spam  
 
----
-
-## 🌐 11. (Optional) Deployment
-
-Make your system real:
-
-- Build an API using **FastAPI**  
-- Connect to email client  
-- Create a web dashboard  
-
----
 
 ## ⚡ Tech Stack
 
